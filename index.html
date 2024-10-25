@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursing Notes Template</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Additional custom styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 28px;
+            border-radius: 8px;
+        }
+        .form-group label {
+            font-weight: bold; /* Make labels bold */
+            font-size: 18px; /* Increased font size */
+        }
+        button {
+            margin-top: 20px;
+        }
+        .result {
+            font-size: 16px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .result h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .result hr {
+            margin: 15px 0;
+        }
+        .procedure-group {
+            margin-top: 10px;
+        }
+        /* Ensure the image is responsive */
+        .header-img {
+            width: 100%; /* Full width of the container */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Optional: for rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Image -->
+        <img src="\\10.70.3.2\Nursing_share\Nursing Notes - Ghonaim\Care logo.jpg" alt="Header Image" class="header-img img-fluid">
+
+        <!-- Endorsement Section -->
+        <h2>Endorsement</h2>
+        <form id="nursing-notes-form">
+            <div class="form-group row">
+                <label for="pt-name" class="col-sm-2 col-form-label"><i class="fas fa-user"></i> I received pt </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="pt-name" placeholder="Enter patient name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="from" class="col-sm-2 col-form-label"><i class="fas fa-arrow-right"></i> From</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="from" placeholder="Enter arrival method">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="conscious-level" class="col-sm-2 col-form-label"><i class="fas fa-brain"></i> Level of Consciousness</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="conscious-level" placeholder="e.g., GCS 15/15">
+                </div>
+            </div>
+
+            <!-- Assessment Section -->
+            <h2>Assessment</h2>
+            <div class="form-group row">
+                <label for="complaining-with" class="col-sm-2 col-form-label"><i class="fas fa-comment-dots"></i> Complaining With</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="complaining-with" placeholder="Enter complaints">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="past-medical-history" class="col-sm-2 col-form-label"><i class="fas fa-history"></i> Past Medical History</label>
+                <div class="col-sm-10">
+                    <textarea id="past-medical-history" class="form-control" rows="2" placeholder="Enter past medical history..."></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="past-surgical-history" class="col-sm-2 col-form-label"><i class="fas fa-scalpel"></i> Past Surgical History</label>
+                <div class="col-sm-10">
+                    <textarea id="past-surgical-history" class="form-control" rows="2" placeholder="Enter past surgical history..."></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="medication-history" class="col-sm-2 col-form-label"><i class="fas fa-pills"></i> Medication History</label>
+                <div class="col-sm-10">
+                    <textarea id="medication-history" class="form-control" rows="2" placeholder="Enter medication history..."></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="allergy" class="col-sm-2 col-form-label"><i class="fas fa-allergies"></i> Allergy</label>
+                <div class="col-sm-10">
+                    <textarea id="allergy" class="form-control" rows="2" placeholder="Enter allergy information..."></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="last-meal" class="col-sm-2 col-form-label"><i class="fas fa-utensils"></i> Last Meal</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="last-meal" placeholder="Enter last meal details">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="skin-condition" class="col-sm-2 col-form-label"><i class="fas fa-tint"></i> Skin Condition</label>
+                <div class="col-sm-10">
+                    <textarea id="skin-condition" class="form-control" rows="2" placeholder="Describe skin condition..."></textarea>
+                </div>
+            </div>
+
+            <!-- Vital Signs Section -->
+            <h2>Vital Signs</h2>
+            <div class="form-group row">
+                <label for="bp" class="col-sm-2 col-form-label"><i class="fas fa-heartbeat"></i> Blood Pressure (BP)</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="bp" placeholder="Enter BP">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="hr" class="col-sm-2 col-form-label"><i class="fas fa-heart"></i> Heart Rate (HR)</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="hr" placeholder="Enter HR">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="temp" class="col-sm-2 col-form-label"><i class="fas fa-thermometer-half"></i> Temperature (Temp)</label>
+                <div class="col-sm-10">
+                    <input type="number" step="0.1" class="form-control" id="temp" placeholder="Enter Temp">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="rr" class="col-sm-2 col-form-label"><i class="fas fa-lungs"></i> Respiratory Rate (RR)</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="rr" placeholder="Enter RR">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="sa02" class="col-sm-2 col-form-label"><i class="fas fa-signal"></i> Oxygen Saturation (SaO2)</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="sa02" placeholder="Enter SaO2">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="rbs" class="col-sm-2 col-form-label"><i class="fas fa-tint"></i> Random Blood Sugar (RBS)</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="rbs" placeholder="Enter RBS">
+                </div>
+            </div>
+
+            <!-- Nursing Procedures Section -->
+            <h2>Nursing Procedures</h2>
+            <div class="form-group">
+                <label><i class="fas fa-check-square"></i> Select Procedures</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="triaging" value="triaging">
+                    <label class="form-check-label" for="triaging">Triaging</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="ecg" value="ecg">
+                    <label class="form-check-label" for="ecg">ECG</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="encoding" value="encoding">
+                    <label class="form-check-label" for="encoding">Encoding</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="verification" value="verification">
+                    <label class="form-check-label" for="verification">Verification</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="peripheral-line" value="peripheral-line">
+                    <label class="form-check-label" for="peripheral-line">Peripheral Cannula</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="neb" value="neb">
+                    <label class="form-check-label" for="neb">Neb</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="dressing" value="dressing">
+                    <label class="form-check-label" for="dressing">Dressing</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="suture" value="suture">
+                    <label class="form-check-label" for="suture">Suture</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="cast" value="cast">
+                    <label class="form-check-label" for="cast">CAST</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="enema" value="enema">
+                    <label class="form-check-label" for="enema">Enema</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="central-line" value="central-line">
+                    <label class="form-check-label" for="central-line">Central Line</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="arterial-line" value="arterial-line">
+                    <label class="form-check-label" for="arterial-line">Arterial Line</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="intubation" value="intubation">
+                    <label class="form-check-label" for="intubation">Endotracheal Intubation</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="chest-tube" value="chest-tube">
+                    <label class="form-check-label" for="chest-tube">Chest Tube</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="ngt" value="ngt">
+                    <label class="form-check-label" for="ngt">NGT Insertion</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="fuc" value="fuc">
+                    <label class="form-check-label" for="fuc">FUC Insertion</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="defib" value="defib">
+                    <label class="form-check-label" for="defib">Defib</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="transportation" value="transportation">
+                    <label class="form-check-label" for="transportation">Transportation</label>
+                </div>
+            </div>
+            <div id="procedure-details"></div>
+
+            <!-- Medications Section -->
+            <h2>Medications</h2>
+            <div class="form-group row">
+                <label for="medications" class="col-sm-2 col-form-label"><i class="fas fa-prescription"></i> Enter Medications</label>
+                <div class="col-sm-10">
+                    <textarea id="medications" class="form-control" rows="4" placeholder="00:00, (Medication name), (Dose), (Route)"></textarea>
+                    <button type="button" class="btn btn-primary mt-2" onclick="addMedication()">Add Medication</button>
+                </div>
+            </div>
+            <div id="medication-list"></div>
+
+            <!-- Imaging & Labs Section -->
+            <h2>Imaging & Labs</h2>
+            <div class="form-group row">
+                <label for="labs" class="col-sm-2 col-form-label"><i class="fas fa-x-ray"></i> Enter Imaging & Labs</label>
+                <div class="col-sm-10">
+                    <textarea id="labs" class="form-control" rows="4" placeholder="00:00H, (Investigation name: Done): Result (e.g., Free)"></textarea>
+                    <button type="button" class="btn btn-primary mt-2" onclick="addLab()">Add Imaging/Lab</button>
+                </div>
+            </div>
+            <div id="labs-list"></div>
+
+            <!-- Events Section -->
+            <h2>Events</h2>
+            <div class="form-group row">
+                <label for="events" class="col-sm-2 col-form-label"><i class="fas fa-calendar-alt"></i> Enter Events</label>
+                <div class="col-sm-10">
+                    <textarea id="events" class="form-control" rows="4" placeholder="00:00H, (Event details)"></textarea>
+                </div>
+            </div>
+
+            <!-- Plans Section -->
+            <h2>Plans</h2>
+            <div class="form-group row">
+                <label for="plans" class="col-sm-2 col-form-label"><i class="fas fa-clipboard-list"></i> Enter Plans</label>
+                <div class="col-sm-10">
+                    <textarea id="plans" class="form-control" rows="4" placeholder="00:00H, (Plan details)"></textarea>
+                </div>
+            </div>
+
+            <!-- Submit, Copy, and Print Buttons -->
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                <button type="button" class="btn btn-info" onclick="copyToClipboard()">Copy</button>
+                <button type="button" class="btn btn-secondary" onclick="printSubmittedData()">Print</button>
+            </div>
+        </form>
+
+        <!-- Display submitted data -->
+        <div class="result" id="submitted-data"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Procedure templates
+        const procedureTemplates = {
+            'triaging': "00:00H : pt is CTAS (  )   BP :     HR :       RR :   Temp:    SAO2:    %     RBS:     ",
+            'ecg': "00:00H : ( ) ECG done showing ( )",
+            'encoding': "00:00H : Encoding for all Supplies Done",
+            'verification': "00:00H : Verification for all medications done & Checking on Complete done",
+            'peripheral-line': "00:00H : P.Line G (   )  inserted in ( ) and in place and patent",
+            'neb': "00:00H : pt has (   ) , Neb (    ) given  to the patient ",
+            'dressing': "00:00H : pt has (   ) , Dressing done to the patient.",
+            'suture': "00:00H : pt has (   ) , ( ) stitch done to the patient.",
+            'cast': "00:00H : pt has (  ) , Cast Done to the patient.",
+            'enema': "00:00H : pt has (  ) , Enema Done to the patient.",
+            'central-line': "00:00H : Consent of CVC signed by (  ) Central line ( 3 lumen  ) inserted to the pt by (  ) in (  ) under sterile technique , CVC is patent and in place and there is no oozing of blood from insertion site and dressing on insertion site > flushing and flushing back is done. CXR done to the patient to confirm the place of CVC ... showing in place > Time out during Central line Done. > CLABSI Bundle followed and document done and attached on system.",
+            'arterial-line': "00:00H : Consent of Arterial signed by ( ...) Arterial line inserted to the pt by ( Dr ...) , in (..... ) under sterile technique > patent and in place and there is no oozing of blood from insertion site and dressing on insertion site > zero line done , configuration done ... invasive Blood Pressure. CLABSI Bundle followed and document done and attached on system > Time out during Arterial line Done.",
+            'intubation': "00:00H : pt was (   ) , Dr (   ) ordered to prepare for intubation >> Consent of Sedation signed by (  ) >> all intubation supplies & instruments are ready , RT ( ) was ready , MV is standby after intubation ETT size 8 inserted by Dr (...) . with assistance of RT : ( ... ) fixation point is .... >> pt attached with MV on [ Mode : .... , PEEP : ..... , VT : ..... , FIO2 :..... , RR: ....... , I:E:....... ] >> CXR was done to confirm the placement of ETT ... showing in place >> VAP Bundle followed and document done and attached on system. >> V/S : V/S ( BP : , HR : , RR : , SAO2 % )",
+            'chest-tube': "00:00H : Consent of Chest Tube signed by ( ...) Chest tube inserted to the pt by ( Dr ...) , in (..... ) under sterile technique >> Chest tube was patent and in place and there is no oozing of blood from insertion site and dressing on insertion site , zero line done is 500 cm of Normal saline … fluctuation is seen during inspiration and expiration > Time out during Chest Tube Done.",
+            'ngt': "00:00H : NGT was inserted to pt in RT nostril size ( .... ) fixed and in place >> placement of NGT confirmed by auscultation ( hearing gushing of air during pushing Tommy syringe ) showing in place >> V/S ( BP : , HR : , RR : , SAO2 % ).",
+            'fuc': "00:00H : ( Folley /Silicon) Urinary Catheter inserted to pt ( size : ... Fr) , fixation : ( ... Ml of N.S ) and fixed on ( ..... ) by (...).",
+            'defib': "00:00H : ECG done : showing that pt has ( ) not responding to medication given >> Dr (...) order prepare for Cardioversion Consent of Sedation - Cardioversion signed by ( ...) >> V/S ( BP : , HR : , RR : , SAO2 % ) >> Health teaching given to the patient about the procedure >> gel applied to patient chest >> joule selected ( ... ) DC pads applied >> SYNC button activated ... Joule delivered to the patient , ECG on cardiac monitor shows sinus rhythm >> ECG Done , V/S ( BP : , HR : , RR : , SAO2 %)",
+            'transportation': "00:00H : pt transferred to Hospital ( ) with Dr. ( ) and SN ( )."
+        };
+
+        // Add medication function
+        function addMedication() {
+            let medList = document.getElementById('medication-list');
+            let newMed = document.createElement('div');
+            newMed.textContent = document.getElementById('medications').value;
+            medList.appendChild(newMed);
+            document.getElementById('medications').value = '';
+        }
+
+        // Add lab function
+        function addLab() {
+            let labsList = document.getElementById('labs-list');
+            let newLab = document.createElement('div');
+            newLab.textContent = document.getElementById('labs').value;
+            labsList.appendChild(newLab);
+            document.getElementById('labs').value = '';
+        }
+
+        // Show text area for selected procedures
+        document.querySelectorAll('.form-check-input').forEach((checkbox) => {
+            checkbox.addEventListener('change', function() {
+                let procedureDetails = document.getElementById('procedure-details');
+                if (this.checked) {
+                    let procedureDiv = document.createElement('div');
+                    procedureDiv.className = 'procedure-group';
+                    let textArea = document.createElement('textarea');
+                    textArea.className = 'form-control';
+                    textArea.rows = 4;
+                    textArea.value = procedureTemplates[this.value]; // Set as the default editable text
+                    procedureDiv.appendChild(textArea);
+                    procedureDetails.appendChild(procedureDiv);
+                } else {
+                    Array.from(procedureDetails.children).forEach((child) => {
+                        if (child.querySelector('textarea').value === procedureTemplates[this.value]) {
+                            procedureDetails.removeChild(child);
+                        }
+                    });
+                }
+            });
+        });
+
+        // Submit form function
+        function submitForm() {
+            let result = document.getElementById('submitted-data');
+            let procedures = Array.from(document.querySelectorAll('.procedure-group textarea')).map(textarea => textarea.value);
+            let medications = Array.from(document.querySelectorAll('#medication-list div')).map(div => div.textContent);
+            let labs = Array.from(document.querySelectorAll('#labs-list div')).map(div => div.textContent);
+            let plans = document.getElementById('plans').value;
+            let events = document.getElementById('events').value;
+            let assessmentDetails = {
+                complainingWith: document.getElementById('complaining-with').value,
+                pastMedicalHistory: document.getElementById('past-medical-history').value,
+                pastSurgicalHistory: document.getElementById('past-surgical-history').value,
+                medicationHistory: document.getElementById('medication-history').value,
+                allergy: document.getElementById('allergy').value,
+                lastMeal: document.getElementById('last-meal').value,
+                skinCondition: document.getElementById('skin-condition').value,
+            };
+
+            // Organize and format the output with lines between categories
+            let output = `
+                <h3>Endorsement:</h3>
+                <b>Patient Name:</b> ${document.getElementById('pt-name').value}<br>
+                <b>From:</b> ${document.getElementById('from').value}<br>
+                <b>Level of Consciousness:</b> ${document.getElementById('conscious-level').value}<hr>
+                
+                <h3>Assessment:</h3>
+                <b>Complaining With:</b> ${assessmentDetails.complainingWith || 'None'}<br>
+                <b>Past Medical History:</b> ${assessmentDetails.pastMedicalHistory || 'None'}<br>
+                <b>Past Surgical History:</b> ${assessmentDetails.pastSurgicalHistory || 'None'}<br>
+                <b>Medication History:</b> ${assessmentDetails.medicationHistory || 'None'}<br>
+                <b>Allergy:</b> ${assessmentDetails.allergy || 'None'}<br>
+                <b>Last Meal:</b> ${assessmentDetails.lastMeal || 'None'}<br>
+                <b>Skin Condition:</b> ${assessmentDetails.skinCondition || 'None'}<hr>
+                
+                <h3>Vital Signs:</h3>
+                <b>BP:</b> ${document.getElementById('bp').value || 'None'}<br>
+                <b>HR:</b> ${document.getElementById('hr').value || 'None'}<br>
+                <b>Temp:</b> ${document.getElementById('temp').value || 'None'}<br>
+                <b>RR:</b> ${document.getElementById('rr').value || 'None'}<br>
+                <b>SaO2:</b> ${document.getElementById('sa02').value || 'None'}<br>
+                <b>RBS:</b> ${document.getElementById('rbs').value || 'None'}<hr>
+                
+                <h3>Procedures:</h3>
+                ${procedures.length ? procedures.join('<br>') : 'None'}<hr>  <!-- Avoid empty procedures list -->
+                
+                <h3>Medications:</h3>
+                ${medications.length ? medications.join('<br>') : 'None'}<hr>  <!-- Avoid empty medications list -->
+                
+                <h3>Imaging & Labs:</h3>
+                ${labs.length ? labs.join('<br>') : 'None'}<hr>  <!-- Avoid empty labs list -->
+                
+                <h3>Events:</h3>
+                ${events ? events : 'None'}<hr>  <!-- Avoid empty events list -->
+                
+                <h3>Plans:</h3>
+                ${plans ? plans : 'None'}  <!-- Avoid empty plans list -->
+            `;
+
+            result.innerHTML = output;
+        }
+
+   // Copy to clipboard function
+function copyToClipboard() {
+    let result = document.getElementById('submitted-data');
+    let textToCopy = result.innerText; // Get text content
+
+    // Add separators above and below each category, and format only labels with values beside them
+    textToCopy = textToCopy
+        // Add separators for category headers (without adding separators in the same line)
+        .replace(/(Endorsement|Assessment|Vital Signs|Procedures|Medications|Imaging & Labs|Events|Plans):/g, '\n----------------\n$1\n----------------\n')
+        // Format labels and values, keeping values beside the labels
+        .replace(/([^\n]+):\s*([^\n]*)/g, function(match, p1, p2) {
+            const label = p1.trim();  // Get the label
+            const value = p2.trim() || 'None';  // Get the value, default to 'None' if empty
+
+            // If the label is "Level of Consciousness", format it without adding a line below
+            if (label === 'Level of Consciousness') {
+                return `${label}: ${value}`; // No extra line for "Level of Consciousness"
+            }
+
+            // For all other labels, place value beside the label
+            return `${label}: ${value}`;
+        })
+        .replace(/(Level of Consciousness:\s*None)/g, '$1') // Ensure 'None' is correctly formatted
+        .trim();
+
+    // Copy formatted text to clipboard
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert('Copied to clipboard!');
+    }).catch(err => {
+        console.error('Error copying text: ', err);
+    });
+}
+
+
+
+
+        // Print function
+        function printSubmittedData() {
+            let printContents = document.getElementById('submitted-data').innerHTML;
+            let originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>
+</html>
